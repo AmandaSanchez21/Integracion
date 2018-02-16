@@ -1,0 +1,13 @@
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.vbprojResolveAssemblyReference.cache
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\WindowsApp1.Form1.resources
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\WindowsApp1.Resources.resources
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.vbproj.GenerateResource.Cache
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.vbproj.CoreCompileInputs.cache
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\Almacen.accdb
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.exe.config
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.exe
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.pdb
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.xml
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.exe
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.xml
+C:\Users\nou model\git\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.pdb
