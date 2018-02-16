@@ -1,0 +1,24 @@
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.exe.config
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.exe
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.pdb
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.xml
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.vbprojResolveAssemblyReference.cache
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.Resources.resources
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.vbproj.GenerateResource.Cache
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.vbproj.CoreCompileInputs.cache
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.exe
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.xml
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.pdb
+C:\Users\Enrique\source\repos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.IU_Almacen.resources
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.exe.config
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.exe
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.pdb
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\bin\Debug\VinosPrototipo.xml
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.vbprojResolveAssemblyReference.cache
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.IU_Almacen.resources
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.Resources.resources
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.vbproj.GenerateResource.Cache
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.vbproj.CoreCompileInputs.cache
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.exe
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.xml
+C:\Manu\Uni\Integracion de Sistemas Informaticos\Lab\Proyecto\Vinos\VinosPrototipo\VinosPrototipo\obj\Debug\VinosPrototipo.pdb
