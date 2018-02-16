@@ -25,6 +25,7 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.nCantidad = New System.Windows.Forms.NumericUpDown()
         Me.grid = New System.Windows.Forms.DataGridView()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AñoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -40,12 +41,13 @@ Partial Class Form1
         Me.cbOrdenar = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.VinosTableAdapter = New WindowsApp1.AlmacenDataSetTableAdapters.VinosTableAdapter()
-        Me.nCantidad = New System.Windows.Forms.NumericUpDown()
+        Me.VinosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1.SuspendLayout()
+        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VinosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlmacenDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VinosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -71,6 +73,13 @@ Partial Class Form1
         Me.GroupBox1.Size = New System.Drawing.Size(759, 254)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'nCantidad
+        '
+        Me.nCantidad.Location = New System.Drawing.Point(61, 12)
+        Me.nCantidad.Name = "nCantidad"
+        Me.nCantidad.Size = New System.Drawing.Size(49, 20)
+        Me.nCantidad.TabIndex = 2
         '
         'grid
         '
@@ -174,12 +183,10 @@ Partial Class Form1
         '
         Me.VinosTableAdapter.ClearBeforeFill = True
         '
-        'nCantidad
+        'VinosBindingSource1
         '
-        Me.nCantidad.Location = New System.Drawing.Point(61, 12)
-        Me.nCantidad.Name = "nCantidad"
-        Me.nCantidad.Size = New System.Drawing.Size(49, 20)
-        Me.nCantidad.TabIndex = 2
+        Me.VinosBindingSource1.DataMember = "Vinos"
+        Me.VinosBindingSource1.DataSource = Me.AlmacenDataSet
         '
         'Form1
         '
@@ -193,10 +200,11 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VinosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlmacenDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VinosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -219,4 +227,5 @@ Partial Class Form1
     Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents nCantidad As NumericUpDown
+    Friend WithEvents VinosBindingSource1 As BindingSource
 End Class

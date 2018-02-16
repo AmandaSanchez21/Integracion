@@ -1,6 +1,6 @@
 ﻿Public Class Vino
 
-    Private _nombre, _tipo As String
+    Private _nombre, _tipo, _fechaEntrada As String
     Private _año, _cantidad As Integer
     Private _grados, _precio As Double
 
@@ -12,6 +12,15 @@
         End Get
         Set(value As String)
             _nombre = value
+        End Set
+    End Property
+
+    Public Property fechaEntrada As String
+        Get
+            Return _fechaEntrada
+        End Get
+        Set(value As String)
+            _fechaEntrada = value
         End Set
     End Property
     Public Property año As Integer
@@ -59,11 +68,11 @@
         Me.DAO = New DAOVino
     End Sub
 
-    Public Sub añadir()
-        DAO.insert(Me)
+    Public Sub añadirCantidad()
+        DAO.update(Me)
     End Sub
-    Public Sub retirar()
-        DAO.delete(Me)
+    Public Sub retirarCantidad()
+        DAO.update(Me)
     End Sub
     Public Sub read()
         DAO.read(Me)

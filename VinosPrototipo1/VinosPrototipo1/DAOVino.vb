@@ -16,7 +16,7 @@ Public Class DAOVino
     End Sub
 
     Public Sub insert(ByRef v As Vino)
-        Dim sql As String = "INSERT INTO Vinos (Nombre, Año, Tipo, Grados, Cantidad, Precio) VALUES (" & v.nombre & ", '" & v.año & "', " & v.tipo & ", '" & v.grados & "', '" & v.cantidad & "', '" & v.precio & "')"
+        Dim sql As String = "INSERT INTO Vinos (Nombre, Año, Tipo, Grados, Cantidad, Precio, Fecha de Entrada) VALUES (" & v.nombre & ", '" & v.año & "', " & v.tipo & ", '" & v.grados & "', '" & v.cantidad & "', '" & v.precio & v.fechaEntrada & "')"
         DBBroker.getDB.change(sql)
     End Sub
 
@@ -25,9 +25,14 @@ Public Class DAOVino
         DBBroker.getDB.change(sql)
     End Sub
 
+    Public Function update(ByVal v As Vino) As Integer
+        'SQL sentence for modifying the attributes of a paper
+        Return DBBroker.getDB.change("UPDATE Vinos SET Cantidad=" & v.cantidad & " WHERE Nombre='" & v.nombre & "';")
+    End Function
+
     Public Sub read(ByRef v As Vino)
         Dim reader As OleDbDataReader
-        Dim sql As String = "SELECT Nombre, Año, Tipo, Grados, Cantidad, Precio FROM Vinos WHERE Nombre=" & v.nombre & ";"
+        Dim sql As String = "SELECT Nombre, Año, Tipo, Grados, Cantidad, Precio FROM Vinos WHERE Nombre='" & v.nombre & "';"
         reader = DBBroker.getDB.read(sql)
         While reader.Read()
             v.nombre = Convert.ToString(reader(0))
