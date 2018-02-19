@@ -21,7 +21,7 @@ Public Class Form1
         n = v.cantidad + nCantidad.Value
         v.cantidad = n
         v.añadirCantidad()
-        MsgBox("Se han modificados las unidades de: " + v.nombre)
+        MsgBox("Se han modificado las unidades de: " + v.nombre)
     End Sub
 
     Private Sub btnRetirar_Click(sender As Object, e As EventArgs) Handles btnRetirar.Click
