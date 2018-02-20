@@ -68,6 +68,10 @@
         Me.DAO = New DAOVino
     End Sub
 
+    Public Sub insertarVino()
+        DAO.insert(Me)
+    End Sub
+
     Public Sub añadirCantidad()
         DAO.update(Me)
     End Sub

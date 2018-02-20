@@ -15,9 +15,13 @@ Public Class DAOVino
     Public Sub New()
     End Sub
 
+    'Public Sub insert(ByRef v As Vino)
+    'Dim sql As String = "INSERT INTO Vinos (Nombre, Año, Tipo, Grados, Cantidad, Precio, Fecha de Entrada) VALUES ('" & v.nombre & "', " & v.año & ", '" & v.tipo & "', " & v.grados & ", " & v.cantidad & ", " & v.precio & ", '" & v.fechaEntrada & "');"
+    '   DBBroker.getDB.change(sql)
+    'End Sub
+
     Public Sub insert(ByRef v As Vino)
-        Dim sql As String = "INSERT INTO Vinos (Nombre, Año, Tipo, Grados, Cantidad, Precio, Fecha de Entrada) VALUES (" & v.nombre & ", '" & v.año & "', " & v.tipo & ", '" & v.grados & "', '" & v.cantidad & "', '" & v.precio & v.fechaEntrada & "')"
-        DBBroker.getDB.change(sql)
+        Dim sql As String = "INSERT INTO Vinos VALUES (Nombre, Año, Grados, Cantidad, Fecha de Entrada, Tipo, Precio) VALUES ('" & v.nombre & "', " & v.año & ", " & v.grados & "," & v.cantidad & ", '" & v.fechaEntrada & "', '" & v.tipo & "', " & v.precio & ");"
     End Sub
 
     Public Sub delete(ByRef v As Vino)

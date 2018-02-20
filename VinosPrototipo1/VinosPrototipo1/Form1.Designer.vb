@@ -27,6 +27,12 @@ Partial Class Form1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.nCantidad = New System.Windows.Forms.NumericUpDown()
         Me.grid = New System.Windows.Forms.DataGridView()
+        Me.btnRetirar = New System.Windows.Forms.Button()
+        Me.btnAñadir = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AñoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GradosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -36,10 +42,6 @@ Partial Class Form1
         Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VinosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AlmacenDataSet = New WindowsApp1.AlmacenDataSet()
-        Me.btnRetirar = New System.Windows.Forms.Button()
-        Me.btnAñadir = New System.Windows.Forms.Button()
-        Me.cbOrdenar = New System.Windows.Forms.ComboBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.VinosTableAdapter = New WindowsApp1.AlmacenDataSetTableAdapters.VinosTableAdapter()
         Me.VinosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox1.SuspendLayout()
@@ -53,7 +55,7 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 14)
+        Me.Label1.Location = New System.Drawing.Point(439, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(49, 13)
         Me.Label1.TabIndex = 0
@@ -61,12 +63,11 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.nCantidad)
         Me.GroupBox1.Controls.Add(Me.grid)
         Me.GroupBox1.Controls.Add(Me.btnRetirar)
         Me.GroupBox1.Controls.Add(Me.btnAñadir)
-        Me.GroupBox1.Controls.Add(Me.cbOrdenar)
-        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
@@ -76,7 +77,7 @@ Partial Class Form1
         '
         'nCantidad
         '
-        Me.nCantidad.Location = New System.Drawing.Point(61, 12)
+        Me.nCantidad.Location = New System.Drawing.Point(504, 12)
         Me.nCantidad.Name = "nCantidad"
         Me.nCantidad.Size = New System.Drawing.Size(49, 20)
         Me.nCantidad.TabIndex = 2
@@ -87,10 +88,56 @@ Partial Class Form1
         Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn, Me.AñoDataGridViewTextBoxColumn, Me.GradosDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.FechaDeEntradaDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn})
         Me.grid.DataSource = Me.VinosBindingSource
-        Me.grid.Location = New System.Drawing.Point(9, 50)
+        Me.grid.Location = New System.Drawing.Point(10, 50)
         Me.grid.Name = "grid"
         Me.grid.Size = New System.Drawing.Size(726, 189)
         Me.grid.TabIndex = 6
+        '
+        'btnRetirar
+        '
+        Me.btnRetirar.Location = New System.Drawing.Point(660, 11)
+        Me.btnRetirar.Name = "btnRetirar"
+        Me.btnRetirar.Size = New System.Drawing.Size(75, 23)
+        Me.btnRetirar.TabIndex = 5
+        Me.btnRetirar.Text = "Retirar"
+        Me.btnRetirar.UseVisualStyleBackColor = True
+        '
+        'btnAñadir
+        '
+        Me.btnAñadir.Location = New System.Drawing.Point(579, 11)
+        Me.btnAñadir.Name = "btnAñadir"
+        Me.btnAñadir.Size = New System.Drawing.Size(75, 23)
+        Me.btnAñadir.TabIndex = 4
+        Me.btnAñadir.Text = "Añadir"
+        Me.btnAñadir.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(6, 16)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(222, 20)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "PRODUCTOS DISPONIBLES"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 272)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(103, 23)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Introducir Vino"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(133, 272)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 3
+        Me.Button2.Text = "Eliminar Vino"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'NombreDataGridViewTextBoxColumn
         '
@@ -144,41 +191,6 @@ Partial Class Form1
         Me.AlmacenDataSet.DataSetName = "AlmacenDataSet"
         Me.AlmacenDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'btnRetirar
-        '
-        Me.btnRetirar.Location = New System.Drawing.Point(660, 11)
-        Me.btnRetirar.Name = "btnRetirar"
-        Me.btnRetirar.Size = New System.Drawing.Size(75, 23)
-        Me.btnRetirar.TabIndex = 5
-        Me.btnRetirar.Text = "Retirar"
-        Me.btnRetirar.UseVisualStyleBackColor = True
-        '
-        'btnAñadir
-        '
-        Me.btnAñadir.Location = New System.Drawing.Point(579, 11)
-        Me.btnAñadir.Name = "btnAñadir"
-        Me.btnAñadir.Size = New System.Drawing.Size(75, 23)
-        Me.btnAñadir.TabIndex = 4
-        Me.btnAñadir.Text = "Añadir"
-        Me.btnAñadir.UseVisualStyleBackColor = True
-        '
-        'cbOrdenar
-        '
-        Me.cbOrdenar.FormattingEnabled = True
-        Me.cbOrdenar.Location = New System.Drawing.Point(290, 11)
-        Me.cbOrdenar.Name = "cbOrdenar"
-        Me.cbOrdenar.Size = New System.Drawing.Size(143, 21)
-        Me.cbOrdenar.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(221, 14)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(63, 13)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Ordenar por"
-        '
         'VinosTableAdapter
         '
         Me.VinosTableAdapter.ClearBeforeFill = True
@@ -193,7 +205,9 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(787, 278)
+        Me.ClientSize = New System.Drawing.Size(787, 307)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
         Me.MaximizeBox = False
         Me.Name = "Form1"
@@ -228,4 +242,8 @@ Partial Class Form1
     Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents nCantidad As NumericUpDown
     Friend WithEvents VinosBindingSource1 As BindingSource
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Button2 As Button
 End Class
