@@ -72,6 +72,10 @@
         DAO.insert(Me)
     End Sub
 
+    Public Sub eliminarVino()
+        DAO.delete(Me)
+    End Sub
+
     Public Sub añadirCantidad()
         DAO.update(Me)
     End Sub

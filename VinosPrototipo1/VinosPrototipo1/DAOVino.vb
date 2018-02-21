@@ -15,17 +15,13 @@ Public Class DAOVino
     Public Sub New()
     End Sub
 
-    'Public Sub insert(ByRef v As Vino)
-    'Dim sql As String = "INSERT INTO Vinos (Nombre, Año, Tipo, Grados, Cantidad, Precio, Fecha de Entrada) VALUES ('" & v.nombre & "', " & v.año & ", '" & v.tipo & "', " & v.grados & ", " & v.cantidad & ", " & v.precio & ", '" & v.fechaEntrada & "');"
-    '   DBBroker.getDB.change(sql)
-    'End Sub
-
     Public Sub insert(ByRef v As Vino)
-        Dim sql As String = "INSERT INTO Vinos VALUES (Nombre, Año, Grados, Cantidad, Fecha de Entrada, Tipo, Precio) VALUES ('" & v.nombre & "', " & v.año & ", " & v.grados & "," & v.cantidad & ", '" & v.fechaEntrada & "', '" & v.tipo & "', " & v.precio & ");"
+        Dim sql As String = "INSERT INTO Vinos (Nombre, Año, Grados, Cantidad, FechaEntrada, Tipo, Precio) VALUES ('" & v.nombre & "', " & v.año & ", " & v.grados & "," & v.cantidad & ", '" & v.fechaEntrada & "', '" & v.tipo & "', " & v.precio & ");"
+        DBBroker.getDB.change(sql)
     End Sub
 
     Public Sub delete(ByRef v As Vino)
-        Dim sql As String = "DELETE FROM Vinos WHERE Nombre=" & v.nombre & ";"
+        Dim sql As String = "DELETE FROM Vinos WHERE Nombre='" & v.nombre & "';"
         DBBroker.getDB.change(sql)
     End Sub
 

@@ -1,8 +1,9 @@
 ﻿
 Public Class Form1
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'AlmacenDataSet.Vinos' Puede moverla o quitarla según sea necesario.
-        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet.Vinos)
+        'TODO: esta línea de código carga datos en la tabla 'AlmacenDataSet1.Vinos' Puede moverla o quitarla según sea necesario.
+        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet1.Vinos)
+
         Dim path As String
         path = Application.StartupPath
         path = path.Replace("\bin\Debug", "\Almacen.accdb")
@@ -19,7 +20,7 @@ Public Class Form1
         v.añadirCantidad()
 
         Me.VinosTableAdapter.modificarCantidad(n, v.nombre)
-        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet.Vinos)
+        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet1.Vinos)
         MsgBox("Se han modificado las unidades de: " + v.nombre)
     End Sub
 
@@ -33,7 +34,7 @@ Public Class Form1
         v.añadirCantidad()
 
         Me.VinosTableAdapter.modificarCantidad(n, v.nombre)
-        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet.Vinos)
+        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet1.Vinos)
         MsgBox("Se han modificado las unidades de: " + v.nombre)
 
     End Sub
@@ -51,6 +52,20 @@ Public Class Form1
         v.insertarVino()
 
         Me.VinosTableAdapter.insertarVino(v.nombre, v.año, v.grados, v.cantidad, v.fechaEntrada, v.tipo, v.precio)
-        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet.Vinos)
+        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet1.Vinos)
+
+        MsgBox("Se ha añadido el vino a la base de datos")
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim v As Vino = New Vino
+        v.nombre = Convert.ToString(grid.CurrentRow.Cells(0).Value)
+
+        v.eliminarVino()
+
+        Me.VinosTableAdapter.eliminarVino(v.nombre)
+        Me.VinosTableAdapter.Fill(Me.AlmacenDataSet1.Vinos)
+
+        MsgBox("Se ha eliminado el vino de la base de datos")
     End Sub
 End Class
