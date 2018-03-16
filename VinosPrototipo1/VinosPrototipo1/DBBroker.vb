@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class DBBroker
-    Public conn As New MySqlConnection
-    Private Shared mConexion As MySqlConnection
+
+    Public Shared mConexion As MySqlConnection
     Private Shared instancia As DBBroker
 
     Public Sub New()
@@ -16,6 +16,26 @@ Public Class DBBroker
         End Try
 
     End Sub
+
+    'Public Sub insert(ByVal sql As String, ByRef v As Almacen)
+    '    Dim cmd = New MySqlCommand(sql, conn)
+    '    cmd.Parameters.AddWithValue("@idProducto", v.id)
+    '    cmd.Parameters.AddWithValue("@stock", v.stock)
+    '    cmd.Parameters.AddWithValue("@pvp", v.pvp)
+    '    cmd.Parameters.AddWithValue("@estado", v.estado)
+
+    '    cmd.ExecuteNonQuery()
+    'End Sub
+
+    Public Function change(ByVal sql As String) As Integer
+        Dim cmd = New MySqlCommand(sql, mConexion)
+        Return cmd.ExecuteNonQuery()
+    End Function
+
+    Public Function read(ByVal sql As String) As MySqlDataReader
+        Dim cmd = New MySqlCommand(sql, mConexion)
+        Return cmd.ExecuteReader()
+    End Function
 
     Public Shared Function getDB() As DBBroker
         If instancia Is Nothing Then

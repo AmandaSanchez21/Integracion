@@ -22,7 +22,7 @@ Partial Class Form2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.grid = New System.Windows.Forms.DataGridView()
         Me.idProducto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.stock = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pvp = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -34,18 +34,18 @@ Partial Class Form2
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'grid
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.stock, Me.pvp, Me.estado})
-        Me.DataGridView1.Location = New System.Drawing.Point(70, 115)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(439, 150)
-        Me.DataGridView1.TabIndex = 0
+        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idProducto, Me.stock, Me.pvp, Me.estado})
+        Me.grid.Location = New System.Drawing.Point(70, 115)
+        Me.grid.Name = "grid"
+        Me.grid.Size = New System.Drawing.Size(439, 150)
+        Me.grid.TabIndex = 0
         '
         'idProducto
         '
@@ -141,17 +141,17 @@ Partial Class Form2
         Me.Controls.Add(Me.nCantidad)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.grid)
         Me.Name = "Form2"
         Me.Text = "Form2"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents grid As DataGridView
     Friend WithEvents idProducto As DataGridViewTextBoxColumn
     Friend WithEvents stock As DataGridViewTextBoxColumn
     Friend WithEvents pvp As DataGridViewTextBoxColumn

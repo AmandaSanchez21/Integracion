@@ -27,3 +27,4 @@ C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\MySql.Data.dll
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\MySql.Data.xml
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.vbproj.CopyComplete
+C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\WindowsApp1.Form2.resources
