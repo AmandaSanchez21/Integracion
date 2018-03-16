@@ -19,7 +19,6 @@ C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\obj\
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.exe
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.xml
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\obj\Debug\VinosPrototipo1.pdb
-C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\Almacen.accdb
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.exe.config
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.exe
 C:\Users\nou model\Source\Repos\Integracion\VinosPrototipo1\VinosPrototipo1\bin\Debug\VinosPrototipo1.pdb
