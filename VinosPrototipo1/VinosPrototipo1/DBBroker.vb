@@ -1,40 +1,21 @@
-﻿Imports System.Data.OleDb
+﻿Imports MySql.Data.MySqlClient
 
 Public Class DBBroker
-    Public Shared FILEPATH As String
-    Private Shared CadConexion As String
-    Private Shared mConexion As OleDbConnection
+    Public conn As New MySqlConnection
+    Private Shared mConexion As MySqlConnection
     Private Shared instancia As DBBroker
 
-    Private Sub New()
-        CadConexion = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=" & FILEPATH
-        mConexion = New OleDbConnection(CadConexion)
-        mConexion.Open()
+    Public Sub New()
+        Try
+            mConexion = New MySqlConnection()
+            mConexion.ConnectionString = "Server= 161.67.27.97; Port=3306; Database=bbdd_compravinos ;Uid=isi1718_vinos; Pwd=CAzr9w9N;"
+            mConexion.Open()
+            MsgBox("Conectado")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
-
-    Public Property path As String
-        Get
-            Return FILEPATH
-        End Get
-        Set(value As String)
-            FILEPATH = value
-        End Set
-    End Property
-
-    Public Sub connectDB()
-        mConexion = New OleDbConnection(CadConexion)
-        mConexion.Open()
-    End Sub
-
-    Public Function read(ByVal sql As String) As OleDbDataReader
-        Dim com As New OleDbCommand(sql, mConexion)
-        Return com.ExecuteReader()
-    End Function
-
-    Public Function change(ByVal sql As String) As Integer
-        Dim com As New OleDbCommand(sql, mConexion)
-        Return com.ExecuteNonQuery()
-    End Function
 
     Public Shared Function getDB() As DBBroker
         If instancia Is Nothing Then

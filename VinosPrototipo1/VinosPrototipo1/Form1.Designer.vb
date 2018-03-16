@@ -25,7 +25,8 @@ Partial Class Form1
         Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.grid = New System.Windows.Forms.DataGridView()
+        Me.VinosBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.AlmacenDataSet1 = New WindowsApp1.AlmacenDataSet()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.nCantidad = New System.Windows.Forms.NumericUpDown()
         Me.btnRetirar = New System.Windows.Forms.Button()
@@ -33,25 +34,16 @@ Partial Class Form1
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.NombreDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.AñoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.GradosDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CantidadDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FechaEntradaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TipoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VinosBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AlmacenDataSet1 = New WindowsApp1.AlmacenDataSet()
         Me.VinosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AlmacenDataSet = New WindowsApp1.AlmacenDataSet()
         Me.VinosTableAdapter = New WindowsApp1.AlmacenDataSetTableAdapters.VinosTableAdapter()
         Me.VinosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.AlmacenDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VinosBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlmacenDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VinosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AlmacenDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VinosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +61,6 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.grid)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.nCantidad)
         Me.GroupBox1.Controls.Add(Me.btnRetirar)
@@ -81,17 +72,15 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         '
-        'grid
+        'VinosBindingSource2
         '
-        Me.grid.AllowUserToDeleteRows = False
-        Me.grid.AutoGenerateColumns = False
-        Me.grid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.grid.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NombreDataGridViewTextBoxColumn, Me.AñoDataGridViewTextBoxColumn, Me.GradosDataGridViewTextBoxColumn, Me.CantidadDataGridViewTextBoxColumn, Me.FechaEntradaDataGridViewTextBoxColumn, Me.TipoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn})
-        Me.grid.DataSource = Me.VinosBindingSource2
-        Me.grid.Location = New System.Drawing.Point(10, 48)
-        Me.grid.Name = "grid"
-        Me.grid.Size = New System.Drawing.Size(725, 200)
-        Me.grid.TabIndex = 8
+        Me.VinosBindingSource2.DataMember = "Vinos"
+        Me.VinosBindingSource2.DataSource = Me.AlmacenDataSet1
+        '
+        'AlmacenDataSet1
+        '
+        Me.AlmacenDataSet1.DataSetName = "AlmacenDataSet"
+        Me.AlmacenDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label3
         '
@@ -146,58 +135,6 @@ Partial Class Form1
         Me.Button2.Text = "Eliminar Vino"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'NombreDataGridViewTextBoxColumn
-        '
-        Me.NombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.HeaderText = "Nombre"
-        Me.NombreDataGridViewTextBoxColumn.Name = "NombreDataGridViewTextBoxColumn"
-        '
-        'AñoDataGridViewTextBoxColumn
-        '
-        Me.AñoDataGridViewTextBoxColumn.DataPropertyName = "Año"
-        Me.AñoDataGridViewTextBoxColumn.HeaderText = "Año"
-        Me.AñoDataGridViewTextBoxColumn.Name = "AñoDataGridViewTextBoxColumn"
-        '
-        'GradosDataGridViewTextBoxColumn
-        '
-        Me.GradosDataGridViewTextBoxColumn.DataPropertyName = "Grados"
-        Me.GradosDataGridViewTextBoxColumn.HeaderText = "Grados"
-        Me.GradosDataGridViewTextBoxColumn.Name = "GradosDataGridViewTextBoxColumn"
-        '
-        'CantidadDataGridViewTextBoxColumn
-        '
-        Me.CantidadDataGridViewTextBoxColumn.DataPropertyName = "Cantidad"
-        Me.CantidadDataGridViewTextBoxColumn.HeaderText = "Cantidad"
-        Me.CantidadDataGridViewTextBoxColumn.Name = "CantidadDataGridViewTextBoxColumn"
-        '
-        'FechaEntradaDataGridViewTextBoxColumn
-        '
-        Me.FechaEntradaDataGridViewTextBoxColumn.DataPropertyName = "FechaEntrada"
-        Me.FechaEntradaDataGridViewTextBoxColumn.HeaderText = "FechaEntrada"
-        Me.FechaEntradaDataGridViewTextBoxColumn.Name = "FechaEntradaDataGridViewTextBoxColumn"
-        '
-        'TipoDataGridViewTextBoxColumn
-        '
-        Me.TipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo"
-        Me.TipoDataGridViewTextBoxColumn.HeaderText = "Tipo"
-        Me.TipoDataGridViewTextBoxColumn.Name = "TipoDataGridViewTextBoxColumn"
-        '
-        'PrecioDataGridViewTextBoxColumn
-        '
-        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "Precio"
-        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
-        '
-        'VinosBindingSource2
-        '
-        Me.VinosBindingSource2.DataMember = "Vinos"
-        Me.VinosBindingSource2.DataSource = Me.AlmacenDataSet1
-        '
-        'AlmacenDataSet1
-        '
-        Me.AlmacenDataSet1.DataSetName = "AlmacenDataSet"
-        Me.AlmacenDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'VinosBindingSource
         '
         Me.VinosBindingSource.DataMember = "Vinos"
@@ -222,12 +159,22 @@ Partial Class Form1
         Me.AlmacenDataSetBindingSource.DataSource = Me.AlmacenDataSet
         Me.AlmacenDataSetBindingSource.Position = 0
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(327, 272)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(75, 23)
+        Me.Button3.TabIndex = 4
+        Me.Button3.Text = "Button3"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(787, 307)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox1)
@@ -236,10 +183,9 @@ Partial Class Form1
         Me.Text = "Form1"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VinosBindingSource2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlmacenDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VinosBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AlmacenDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VinosBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -265,14 +211,7 @@ Partial Class Form1
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents AlmacenDataSetBindingSource As BindingSource
-    Friend WithEvents grid As DataGridView
     Friend WithEvents AlmacenDataSet1 As AlmacenDataSet
     Friend WithEvents VinosBindingSource2 As BindingSource
-    Friend WithEvents NombreDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents AñoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents GradosDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CantidadDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FechaEntradaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents TipoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PrecioDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Button3 As Button
 End Class

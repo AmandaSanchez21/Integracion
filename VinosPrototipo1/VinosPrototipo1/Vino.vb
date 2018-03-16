@@ -68,25 +68,25 @@
         Me.DAO = New DAOVino
     End Sub
 
-    Public Sub insertarVino()
-        DAO.insert(Me)
-    End Sub
+    'Public Sub insertarVino()
+    '    DAO.insert(Me)
+    'End Sub
 
-    Public Sub eliminarVino()
-        DAO.delete(Me)
-    End Sub
+    'Public Sub eliminarVino()
+    '    DAO.delete(Me)
+    'End Sub
 
-    Public Sub añadirCantidad()
-        DAO.update(Me)
-    End Sub
-    Public Sub retirarCantidad()
-        DAO.update(Me)
-    End Sub
-    Public Sub read()
-        DAO.read(Me)
-    End Sub
-    Public Function readAll() As Collection
-        DAO.readAll()
-        Return DAO.lista
-    End Function
+    'Public Sub añadirCantidad()
+    '    DAO.update(Me)
+    'End Sub
+    'Public Sub retirarCantidad()
+    '    DAO.update(Me)
+    'End Sub
+    'Public Sub read()
+    '    DAO.read(Me)
+    'End Sub
+    'Public Function readAll() As Collection
+    '    DAO.readAll()
+    '    Return DAO.lista
+    'End Function
 End Class
