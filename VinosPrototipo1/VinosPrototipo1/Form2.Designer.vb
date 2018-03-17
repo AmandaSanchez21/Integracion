@@ -29,13 +29,13 @@ Partial Class Form2
         Me.estado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.nCantidad = New System.Windows.Forms.NumericUpDown()
+        Me.nStock = New System.Windows.Forms.NumericUpDown()
         Me.btnRetirar = New System.Windows.Forms.Button()
         Me.btnAñadir = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.grid, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nStock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grid
@@ -86,12 +86,12 @@ Partial Class Form2
         Me.Label1.TabIndex = 9
         Me.Label1.Text = "Cantidad"
         '
-        'nCantidad
+        'nStock
         '
-        Me.nCantidad.Location = New System.Drawing.Point(481, 24)
-        Me.nCantidad.Name = "nCantidad"
-        Me.nCantidad.Size = New System.Drawing.Size(49, 20)
-        Me.nCantidad.TabIndex = 10
+        Me.nStock.Location = New System.Drawing.Point(481, 24)
+        Me.nStock.Name = "nStock"
+        Me.nStock.Size = New System.Drawing.Size(49, 20)
+        Me.nStock.TabIndex = 10
         '
         'btnRetirar
         '
@@ -138,14 +138,14 @@ Partial Class Form2
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnRetirar)
         Me.Controls.Add(Me.btnAñadir)
-        Me.Controls.Add(Me.nCantidad)
+        Me.Controls.Add(Me.nStock)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.grid)
         Me.Name = "Form2"
         Me.Text = "Form2"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.nCantidad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nStock, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -158,7 +158,7 @@ Partial Class Form2
     Friend WithEvents estado As DataGridViewTextBoxColumn
     Friend WithEvents Label3 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents nCantidad As NumericUpDown
+    Friend WithEvents nStock As NumericUpDown
     Friend WithEvents btnRetirar As Button
     Friend WithEvents btnAñadir As Button
     Friend WithEvents Button2 As Button

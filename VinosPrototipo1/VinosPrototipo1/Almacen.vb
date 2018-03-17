@@ -55,10 +55,10 @@
         DAO.delete(Me)
     End Sub
 
-    Public Sub añadirCantidad()
+    Public Sub añadirStock()
         DAO.update(Me)
     End Sub
-    Public Sub retirarCantidad()
+    Public Sub retirarStock()
         DAO.update(Me)
     End Sub
     Public Sub read()
