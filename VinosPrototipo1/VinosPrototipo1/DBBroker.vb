@@ -16,15 +16,14 @@ Public Class DBBroker
 
     End Sub
 
-    'Public Sub insert(ByVal sql As String, ByRef v As Almacen)
-    '    Dim cmd = New MySqlCommand(sql, conn)
-    '    cmd.Parameters.AddWithValue("@idProducto", v.id)
-    '    cmd.Parameters.AddWithValue("@stock", v.stock)
-    '    cmd.Parameters.AddWithValue("@pvp", v.pvp)
-    '    cmd.Parameters.AddWithValue("@estado", v.estado)
-
-    '    cmd.ExecuteNonQuery()
-    'End Sub
+    Public Sub insert(ByVal sql As String, ByRef v As Almacen)
+        Dim cmd = New MySqlCommand(sql, mConexion)
+        cmd.Parameters.AddWithValue("@idProducto", v.id)
+        cmd.Parameters.AddWithValue("@stock", v.stock)
+        cmd.Parameters.AddWithValue("@pvp", v.pvp)
+        cmd.Parameters.AddWithValue("@estado", v.estado)
+        cmd.ExecuteNonQuery()
+    End Sub
 
     Public Function change(ByVal sql As String) As Integer
         Dim cmd = New MySqlCommand(sql, mConexion)

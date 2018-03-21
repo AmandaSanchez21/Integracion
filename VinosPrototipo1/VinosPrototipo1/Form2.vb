@@ -44,7 +44,6 @@
 
         v.insertarVino()
 
-        grid.Rows.Add(v.id, v.stock, v.pvp, v.estado)
         MsgBox("Se han añadido el vino con Id: " + v.id.ToString)
     End Sub
 
