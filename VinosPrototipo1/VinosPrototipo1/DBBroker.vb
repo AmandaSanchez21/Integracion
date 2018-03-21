@@ -7,8 +7,7 @@ Public Class DBBroker
 
     Public Sub New()
         Try
-            mConexion = New MySqlConnection()
-            mConexion.ConnectionString = "Server= 161.67.27.97; Port=3306; Database=bbdd_compravinos ;Uid=isi1718_vinos; Pwd=CAzr9w9N;"
+            mConexion = New MySqlConnection("Server= 161.67.27.97; Port=3306; Database=bbdd_compravinos ;Uid=isi1718_vinos; Pwd=CAzr9w9N;")
             mConexion.Open()
             MsgBox("Conectado")
         Catch ex As Exception

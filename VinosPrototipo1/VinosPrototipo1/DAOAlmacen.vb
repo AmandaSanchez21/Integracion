@@ -27,12 +27,12 @@ Public Class DAOAlmacen
 
     Public Function update(ByVal a As Almacen) As Integer
         'SQL sentence for modifying the attributes of a paper
-        Return DBBroker.getDB.change("UPDATE tb_stockvino SET stock=" & a.stock & " WHERE id=" & a.id & ";")
+        Return DBBroker.getDB.change("UPDATE tb_stockvino SET stock=" & a.stock & " WHERE idProducto=" & a.id & ";")
     End Function
 
     Public Sub read(ByRef a As Almacen)
         Dim reader As MySqlDataReader
-        Dim sql As String = "SELECT stock, pvp, estado FROM tb_stockvino WHERE id =" & a.id & ";"
+        Dim sql As String = "SELECT stock, pvp, estado FROM tb_stockvino WHERE idProducto =" & a.id & ";"
         reader = DBBroker.getDB.read(sql)
         While reader.Read()
             a.stock = Convert.ToInt32(reader(0))
@@ -41,6 +41,7 @@ Public Class DAOAlmacen
         End While
         reader.Close()
     End Sub
+
     Public Sub readAll()
         Dim reader As MySqlDataReader
         Dim sql As String = "SELECT * FROM tb_stockvino"
@@ -57,4 +58,5 @@ Public Class DAOAlmacen
         End While
         reader.Close()
     End Sub
+
 End Class
