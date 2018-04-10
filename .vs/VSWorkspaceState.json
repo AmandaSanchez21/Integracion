@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\VinosPrototipo1",
-    "\\VinosPrototipo1\\VinosPrototipo1"
+    "\\AlmacenVinos",
+    "\\AlmacenVinos\\AlmacenVinos",
+    "\\AlmacenVinos\\AlmacenVinosWS"
   ],
-  "SelectedNode": "\\VinosPrototipo1\\VinosPrototipo1\\VinosPrototipo1.vbproj",
+  "SelectedNode": "\\AlmacenVinos\\AlmacenVinos\\My Project",
   "PreviewInSolutionExplorer": false
 }
