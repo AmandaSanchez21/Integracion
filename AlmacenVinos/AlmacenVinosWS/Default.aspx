@@ -19,7 +19,11 @@
                 <SortedDescendingCellStyle BackColor="#D4DFE1" />
                 <SortedDescendingHeaderStyle BackColor="#15524A" />
             </asp:GridView>
+            <asp:Label ID="Label2" runat="server" Text="Introduce el código del vino que quieres comprobar:" Visible="False"></asp:Label>
         </p>
+        <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
+        <asp:Button ID="Button2" runat="server" Text="Comprobar stock" Visible="False" />
+        <asp:Label ID="Label1" runat="server"></asp:Label>
     </div>
 
     <div class="row">
