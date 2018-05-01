@@ -24,9 +24,13 @@
         <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
         <asp:Button ID="Button2" runat="server" Text="Comprobar stock" Visible="False" />
         <asp:Label ID="Label1" runat="server"></asp:Label>
+        <asp:Button ID="Button3" runat="server" Text="Modificar stock" Visible="False" />
+        <asp:TextBox ID="TextBox2" runat="server" Visible="False" Width="142px"></asp:TextBox>
+        <asp:Button ID="Button4" runat="server" Text="Guardar" Visible="False" />
     </div>
 
     <div class="row">
+        <asp:Label ID="Label3" runat="server" ForeColor="Red"></asp:Label>
     </div>
 
 </asp:Content>
