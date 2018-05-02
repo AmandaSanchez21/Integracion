@@ -51,9 +51,9 @@ Public Class AlmacenVinosWS
         Return stock
     End Function
 
-    Public Function CambiarStock(s As String, v As String) As Integer
-        MsgBox(s)
-        Dim sql As String = "UPDATE tb_stockvino SET stock = " & Integer.Parse(s) & "WHERE idProducto= " & Integer.Parse(v) & ";"
+    Public Function CambiarStock(stock As String, id As String) As Integer
+
+        Dim sql As String = "UPDATE tb_stockvino SET stock = " & Integer.Parse(stock) & " WHERE idProducto= " & Integer.Parse(id) & ";"
         Dim cmd = New MySqlCommand(sql, mConexion)
         Dim result As Integer
         Try

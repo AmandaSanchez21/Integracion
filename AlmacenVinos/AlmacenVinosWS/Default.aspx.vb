@@ -40,5 +40,8 @@
         If result = 1 Then
             Label3.Text = "Stock actualizado"
         End If
+
+        grdVinos.DataSource = ws.Consulta()
+        grdVinos.DataBind()
     End Sub
 End Class
