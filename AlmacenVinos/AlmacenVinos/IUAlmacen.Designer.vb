@@ -129,7 +129,7 @@ Partial Class IUAlmacen
         Me.Button1.Text = "Introducir Vino"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Form2
+        'IUAlmacen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -142,7 +142,7 @@ Partial Class IUAlmacen
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.grid)
-        Me.Name = "Form2"
+        Me.Name = "IUAlmacen"
         Me.Text = "Form2"
         CType(Me.grid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nStock, System.ComponentModel.ISupportInitialize).EndInit()
