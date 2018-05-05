@@ -10,8 +10,6 @@ Imports MySql.Data.MySqlClient
 <ToolboxItem(False)> _
 Public Class AlmacenVinosWS
     Inherits System.Web.Services.WebService
-    Public Shared mConexion As MySqlConnection
-
 
     <WebMethod()>
     Public Function Consulta() As DataSet
