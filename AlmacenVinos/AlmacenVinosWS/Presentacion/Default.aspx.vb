@@ -14,6 +14,9 @@
     End Sub
 
     Protected Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        TextBox2.Visible = False
+        Button4.Visible = False
+
         ws = New AlmacenVinosWS
         Dim stock As Boolean
         stock = ws.ComprobarStock(TextBox1.Text)

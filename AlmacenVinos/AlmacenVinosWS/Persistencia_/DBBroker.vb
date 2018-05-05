@@ -1,18 +1,10 @@
-﻿Imports System.Web.Services
-Imports System.Web.Services.Protocols
-Imports System.ComponentModel
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
-' Para permitir que se llame a este servicio web desde un script, usando ASP.NET AJAX, quite la marca de comentario de la línea siguiente.
-' <System.Web.Script.Services.ScriptService()> _
-<System.Web.Services.WebService(Namespace:="http://tempuri.org/")> _
-<System.Web.Services.WebServiceBinding(ConformsTo:=WsiProfiles.BasicProfile1_1)> _
-<ToolboxItem(False)> _
-Public Class AlmacenVinosWS
-    Inherits System.Web.Services.WebService
+Public Class DBBroker
     Public Shared mConexion As MySqlConnection
     Public Shared mAdaptador As MySqlDataAdapter
     Public Shared mDataSet As DataSet
+    Private Shared instancia As DBBroker
 
     Public Sub New()
         Try
@@ -23,36 +15,35 @@ Public Class AlmacenVinosWS
         End Try
     End Sub
 
-    <WebMethod()>
-    Public Function Consulta() As DataSet
+    Public Function readAlmacen() As DataSet
         mAdaptador = New MySqlDataAdapter("select * from tb_stockvino", mConexion)
         mDataSet = New DataSet("tb_stockvino")
         mAdaptador.FillSchema(mDataSet, SchemaType.Source, "tb_stockvino")
         mAdaptador.Fill(mDataSet, "tb_stockvino")
         Return mDataSet
-
     End Function
 
-    Public Function ComprobarStock(v As String) As Boolean
-        Dim stock As Boolean
-        Dim sql As String = "SELECT stock FROM tb_stockvino where idProducto= " & Integer.Parse(v) & ";"
+    Public Function comprobarStock(ByVal id As String) As Integer
+        Dim sql As String = "SELECT stock FROM tb_stockvino where idProducto= " & Integer.Parse(id) & ";"
         Dim cmd = New MySqlCommand(sql, mConexion)
-        Dim read As MySqlDataReader = cmd.ExecuteReader()
-        While read.Read()
+        Dim stock As Integer
+        Dim read As MySqlDataReader
 
-            If Convert.ToInt32(read(0)) <= 0 Then
-                stock = False
-            Else
-                stock = True
-            End If
-        End While
+        Try
+            read = cmd.ExecuteReader()
+            While read.Read()
+                stock = Integer.Parse(read(0))
+            End While
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
         read.Close()
 
         Return stock
     End Function
 
-    Public Function CambiarStock(stock As String, id As String) As Integer
-
+    Public Function actualizarStock(ByVal stock As String, ByVal id As String) As String
         Dim sql As String = "UPDATE tb_stockvino SET stock = " & Integer.Parse(stock) & " WHERE idProducto= " & Integer.Parse(id) & ";"
         Dim cmd = New MySqlCommand(sql, mConexion)
         Dim result As Integer
@@ -61,7 +52,15 @@ Public Class AlmacenVinosWS
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+
         Return result
+    End Function
+
+    Public Shared Function getDB() As DBBroker
+        If instancia Is Nothing Then
+            instancia = New DBBroker()
+        End If
+        Return instancia
     End Function
 
 End Class
